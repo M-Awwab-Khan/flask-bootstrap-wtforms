@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from login_form import LoginForm
+from flask_bootstrap import Bootstrap5
 
 '''
 Red underlines? Install the required packages first: 
@@ -17,6 +18,8 @@ This will install the packages from requirements.txt for this project.
 
 app = Flask(__name__)
 app.secret_key = "jsaoiufjlksjerioqw3jlkrfjsdk"
+
+bootstrap = Bootstrap5(app)
 
 @app.route("/")
 def home():
