@@ -22,9 +22,10 @@ app.secret_key = "jsaoiufjlksjerioqw3jlkrfjsdk"
 def home():
     return render_template('index.html')
 
-@app.route('/login')
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     login_form = LoginForm()
+    login_form.validate_on_submit()
     return render_template('login.html', form=login_form)
 
 if __name__ == '__main__':
